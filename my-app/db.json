@@ -1,19 +1,81 @@
 {
-    "superheroes": [
-        {
-            "id": 1,
-            "name": "Superman",
-            "alter ego": "Clark Kent"
-        },
-        {
-            "id": 2,
-            "name": "Batman",
-            "alter ego": "Bruce Wayne"
-        },
-        {
-            "id": 3,
-            "name": "Wonder Woman",
-            "alter ego": "Diana Prince"
-        }
-    ]
+  "superheroes": [
+    {
+      "id": 1,
+      "name": "Superman",
+      "alterEgo": "Clark Kent"
+    },
+    {
+      "id": 2,
+      "name": "Batman",
+      "alterEgo": "Bruce Wayne"
+    },
+    {
+      "id": 3,
+      "name": "Wonder Woman",
+      "alterEgo": "Diana Prince"
+    }
+  ],
+
+  "friends": [
+    {
+      "id": 1,
+      "name": "Rachel Green"
+    },
+    {
+      "id": 2,
+      "name": "Ross Geller"
+    },
+    {
+      "id": 3,
+      "name": "Monica Geller"
+    },
+    {
+      "id": 4,
+      "name": "Chandler Bing"
+    },
+    {
+      "id": 5,
+      "name": "Joey Tribbiani"
+    },
+    {
+      "id": 6,
+      "name": "Phoebe Buffay"
+    }
+  ],
+
+  "users": [
+    {
+      "id": 1,
+      "email": "jane_doe@example.com",
+      "username": "sparkle_ninja"
+    },
+    {
+      "id": 2,
+      "email": "john_smith@example.com",
+      "username": "zen_master"
+    },
+    {
+      "id": 3,
+      "email": "lucy_lu@example.com",
+      "username": "stellar_voyager"
+    }
+  ],
+  "channels": [
+    {
+      "id": 1,
+      "user": "sparkle_ninja",
+      "courses": ["Mathematics", "Physics", "Art History"]
+    },
+    {
+      "id": 2,
+      "user": "zen_master",
+      "courses": ["Computer Science", "Literature", "Psychology"]
+    },
+    {
+      "id": 3,
+      "user": "stellar_voyager",
+      "courses": ["Biology", "History", "Music"]
+    }
+  ]
 }

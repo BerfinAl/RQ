@@ -6,7 +6,7 @@ function Header() {
 
             <nav className="bg-body-tertiary">
                 <NavLink  to="/"> Home </NavLink>
-                <NavLink  to="/superheroes"> Superheros </NavLink>
+                <NavLink  to="/paralelqueries"> Friends </NavLink>
                 <NavLink  to="/rqsuperheroes">RQ Super Heros</NavLink>
             </nav>
     )
