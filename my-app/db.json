@@ -14,6 +14,91 @@
       "id": 3,
       "name": "Wonder Woman",
       "alterEgo": "Diana Prince"
+    },
+    {
+      "id": 4,
+      "name": "Spider-Man",
+      "alterEgo": "Peter Parker"
+    },
+    {
+      "id": 5,
+      "name": "Iron Man",
+      "alterEgo": "Tony Stark"
+    },
+    {
+      "id": 6,
+      "name": "Captain America",
+      "alterEgo": "Steve Rogers"
+    },
+    {
+      "id": 7,
+      "name": "The Flash",
+      "alterEgo": "Barry Allen"
+    },
+    {
+      "id": 8,
+      "name": "Thor",
+      "alterEgo": "Thor Odinson"
+    },
+    {
+      "id": 9,
+      "name": "Hulk",
+      "alterEgo": "Bruce Banner"
+    },
+    {
+      "id": 10,
+      "name": "Black Widow",
+      "alterEgo": "Natasha Romanoff"
+    },
+    {
+      "id": 11,
+      "name": "Green Lantern",
+      "alterEgo": "Hal Jordan"
+    },
+    {
+      "id": 12,
+      "name": "Aquaman",
+      "alterEgo": "Arthur Curry"
+    },
+    {
+      "id": 13,
+      "name": "Wolverine",
+      "alterEgo": "Logan"
+    },
+    {
+      "id": 14,
+      "name": "Black Panther",
+      "alterEgo": "T'Challa"
+    },
+    {
+      "id": 15,
+      "name": "Captain Marvel",
+      "alterEgo": "Carol Danvers"
+    },
+    {
+      "id": 16,
+      "name": "Green Arrow",
+      "alterEgo": "Oliver Queen"
+    },
+    {
+      "id": 17,
+      "name": "Doctor Strange",
+      "alterEgo": "Stephen Strange"
+    },
+    {
+      "id": 18,
+      "name": "Ant-Man",
+      "alterEgo": "Scott Lang"
+    },
+    {
+      "id": 19,
+      "name": "Supergirl",
+      "alterEgo": "Kara Zor-El"
+    },
+    {
+      "id": 20,
+      "name": "Robin",
+      "alterEgo": "Dick Grayson"
     }
   ],
 

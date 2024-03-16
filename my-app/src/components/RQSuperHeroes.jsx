@@ -1,19 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import Loader from "./Loader";
 import Error from "./Error";
 import { useSuperherosData } from "../hooks/useSuperherosData";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 function RQSuperHeroes() {
-  const {
-    data,
-    isLoading,
-    isSuccess,
-    isError,
-    isFetched,
-    refetch,
-    isFetching,
-  } = useSuperherosData();
+  let [searchParams] = useSearchParams();
+
+  const page = searchParams.get("page") || 1;
+
+  const [pageNum, setPageNum] = useState(page);
+
+  const { data, isLoading, isSuccess, isFetching, refetch } =
+    useSuperherosData(pageNum);
 
   const superheroesList = data?.data.map((hero) => {
     return (
@@ -22,6 +21,20 @@ function RQSuperHeroes() {
       </li>
     );
   });
+
+
+  const elementPerPage = 5;
+
+  const paginationItem = data?.amount / elementPerPage;
+
+
+  const prevPage = () => {
+    return setPageNum((prev) => Number(prev) - 1);
+  };
+
+  const nexrPage = () => {
+    return setPageNum((prev) => Number(prev) + 1);
+  };
 
   return (
     <div>
@@ -34,6 +47,8 @@ function RQSuperHeroes() {
         <>
           <h2>RQ SuperHeroes</h2>
           <ul>{superheroesList}</ul>
+          <button onClick={prevPage} disabled={1 === pageNum}>Prev</button>
+          <button onClick={nexrPage} disabled={paginationItem === pageNum}>Next</button>
         </>
       ) : (
         <Error />
