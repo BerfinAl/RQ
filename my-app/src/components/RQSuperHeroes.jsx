@@ -1,58 +1,50 @@
 import React, { useState } from "react";
+import { Link, useSearchParams } from "react-router-dom";
+import Pagination from "react-bootstrap/Pagination";
+
 import Loader from "./Loader";
 import Error from "./Error";
+
 import { useSuperherosData } from "../hooks/useSuperherosData";
-import { Link, useSearchParams } from "react-router-dom";
+import { usePaginationItems } from "../hooks/usePaginationItems";
 
 function RQSuperHeroes() {
-  let [searchParams] = useSearchParams();
-
-  const page = searchParams.get("page") || 1;
-
-  const [pageNum, setPageNum] = useState(page);
-
-  const { data, isLoading, isSuccess, isFetching, refetch } =
+  const [searchParams] = useSearchParams();
+  const [pageNum, setPageNum] = useState(searchParams.get("page") || 1);
+  const { data, isLoading, isSuccess, isError, isFetching, error } =
     useSuperherosData(pageNum);
 
-  const superheroesList = data?.data.map((hero) => {
-    return (
-      <li key={hero.id}>
-        <Link to={hero.id}>{hero.name}</Link>
-      </li>
-    );
-  });
-
-
   const elementPerPage = 5;
+  const totalPages = Math.ceil(data?.amount / elementPerPage);
 
-  const paginationItem = data?.amount / elementPerPage;
+  const paginationItems = usePaginationItems(totalPages, pageNum, setPageNum);
 
-
-  const prevPage = () => {
-    return setPageNum((prev) => Number(prev) - 1);
-  };
-
-  const nexrPage = () => {
-    return setPageNum((prev) => Number(prev) + 1);
-  };
+  const superheroElements = 
+    data?.data.length > 0 ? (
+      <ul>
+        {data.data.map((hero) => (
+          <li key={hero.id}>
+            <Link to={hero.id}>{hero.name}</Link>
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p>No superheroes found.</p>
+    );
 
   return (
     <div>
-      {/* {!isFetched && (
-        <button onClick={refetch}>Get Superheros here right away!!</button>
-      )} */}
       {isLoading || isFetching ? (
         <Loader />
       ) : isSuccess ? (
         <>
           <h2>RQ SuperHeroes</h2>
-          <ul>{superheroesList}</ul>
-          <button onClick={prevPage} disabled={1 === pageNum}>Prev</button>
-          <button onClick={nexrPage} disabled={paginationItem === pageNum}>Next</button>
+          {superheroElements}
+          <Pagination>{paginationItems}</Pagination>
         </>
-      ) : (
-        <Error />
-      )}
+      ) : isError ? (
+        <Error message={error.message} />
+      ) : null}
     </div>
   );
 }
